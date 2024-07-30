@@ -77,7 +77,7 @@ class Lexer(val source: String) {
                 } else if (isAlpha(c)) {
                     identifier()
                 } else {
-                    //Error
+                    error(line, "Unexpected character.")
                 }
             }
         }
@@ -131,7 +131,7 @@ class Lexer(val source: String) {
             advance()
         }
         if (isAtEnd()) {
-            //error
+            error(line, "Unterminated string.")
             return
         }
         advance()

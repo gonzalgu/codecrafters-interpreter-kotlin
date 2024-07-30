@@ -11,4 +11,10 @@ class LexerTest{
         System.out.println(tokens)
     }
 
+    @Test
+    fun lexErrorTest(){
+        val text = ",.\$(#"
+        runCommand("tokenize", text)
+    }
+
 }
