@@ -32,8 +32,12 @@ fun runCommand(command: String, fileContents: String) {
             val lexer = Lexer(fileContents)
             val tokens = lexer.scanTokens()
             val parser = Parser(tokens)
-            val expr = parser.parse()
-            System.out.println(printAst(expr))
+            try{
+                val expr = parser.parse()
+                System.out.println(printAst(expr))
+            }catch (e:Exception){
+                exitProcess(65)
+            }
         }
 
         else -> {

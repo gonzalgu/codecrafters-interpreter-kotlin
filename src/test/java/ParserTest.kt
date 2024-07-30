@@ -22,4 +22,14 @@ class ParserTest{
         val text = "nil"
         runCommand("parse", text)
     }
+    @Test
+    fun parseUnmatchedParentheses(){
+        val text = "(\"foo\""
+        runCommand("parse", text)
+    }
+    @Test
+    fun parseParentheses(){
+        val text = "(\"foo\")"
+        runCommand("parse", text)
+    }
 }
