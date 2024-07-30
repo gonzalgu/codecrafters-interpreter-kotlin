@@ -30,14 +30,14 @@ fun runCommand(command: String, fileContents: String) {
         }
 
         else -> {
-            System.err.println("Unknown command: ${command}")
+            System.err.println("Unknown command: $command")
             exitProcess(1)
         }
     }
 }
 
 fun report(line: Int, where: String, message: String) {
-    System.err.print("[line ${line}] Error ${where}: ${message}}")
+    System.err.print("[line $line] Error $where: $message")
     hadError = true
 }
 
