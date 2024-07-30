@@ -77,7 +77,7 @@ class Lexer(val source: String) {
                 } else if (isAlpha(c)) {
                     identifier()
                 } else {
-                    error(line, "Unexpected character:$c\n")
+                    error(line, "Unexpected character: $c\n")
                     hadError = true
                 }
             }

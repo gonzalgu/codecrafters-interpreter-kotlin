@@ -37,7 +37,7 @@ fun runCommand(command: String, fileContents: String) {
 }
 
 fun report(line: Int, where: String, message: String) {
-    System.err.print("[line $line] Error $where: $message")
+    System.err.print("[line $line] Error$where: $message")
     hadError = true
 }
 
