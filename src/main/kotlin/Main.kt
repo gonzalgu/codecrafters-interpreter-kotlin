@@ -28,6 +28,13 @@ fun runCommand(command: String, fileContents: String) {
                 exitProcess(65)
             }
         }
+        "parse" -> {
+            val lexer = Lexer(fileContents)
+            val tokens = lexer.scanTokens()
+            val parser = Parser(tokens)
+            val expr = parser.parse()
+            System.out.println(printAst(expr))
+        }
 
         else -> {
             System.err.println("Unknown command: $command")
