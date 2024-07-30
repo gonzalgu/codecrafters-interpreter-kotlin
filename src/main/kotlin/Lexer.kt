@@ -17,6 +17,7 @@ class Lexer(val source: String) {
         Pair("return", TokenType.RETURN),
         Pair("super", TokenType.SUPER),
         Pair("this", TokenType.THIS),
+        Pair("true", TokenType.TRUE),
         Pair("var", TokenType.VAR),
         Pair("while", TokenType.WHILE)
     )
