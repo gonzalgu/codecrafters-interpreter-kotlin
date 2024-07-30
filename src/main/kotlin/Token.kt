@@ -4,6 +4,6 @@ data class Token(
     val literal: Any?,
     val line: Int) {
     override fun toString(): String {
-        return "Token(type=$type, lexeme='$lexeme', literal=$literal)"
+        return "$type $lexeme $literal"
     }
 }
