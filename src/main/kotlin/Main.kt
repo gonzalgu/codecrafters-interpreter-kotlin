@@ -61,6 +61,13 @@ fun runCommand(command: String, fileContents: String) {
 
 fun printValue(value:Any?):String = when(value){
     null -> "nil"
+    is Double -> {
+        if(value.mod(1.0) != 0.0){
+            value.toString()
+        }else{
+            String.format("%.0f", value)
+        }
+    }
     else -> value.toString()
 }
 

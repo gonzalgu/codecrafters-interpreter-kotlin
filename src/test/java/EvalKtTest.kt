@@ -22,4 +22,19 @@ class EvalKtTest{
         val text = "nil"
         runCommand("evaluate", text)
     }
+    @Test
+    fun testHello(){
+        val text = "\"hello world!\""
+        runCommand("evaluate", text)
+    }
+    @Test
+    fun testNumber(){
+        val text = "10.40"
+        runCommand("evaluate", text)
+    }
+    @Test
+    fun testNumber2(){
+        val text = "10"
+        runCommand("evaluate", text)
+    }
 }
