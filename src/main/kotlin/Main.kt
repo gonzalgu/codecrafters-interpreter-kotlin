@@ -39,12 +39,29 @@ fun runCommand(command: String, fileContents: String) {
                 exitProcess(65)
             }
         }
+        "evaluate" -> {
+            val lexer = Lexer(fileContents)
+            val tokens = lexer.scanTokens()
+            val parser = Parser(tokens)
+            try{
+                val expr = parser.parse()
+                val result = eval(expr)
+                System.out.println(printValue(result))
+            }catch (e:Exception){
+                exitProcess(65)
+            }
+        }
 
         else -> {
             System.err.println("Unknown command: $command")
             exitProcess(1)
         }
     }
+}
+
+fun printValue(value:Any?):String = when(value){
+    null -> "nil"
+    else -> value.toString()
 }
 
 fun report(line: Int, where: String, message: String) {
