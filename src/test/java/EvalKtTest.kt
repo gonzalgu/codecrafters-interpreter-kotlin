@@ -37,4 +37,9 @@ class EvalKtTest{
         val text = "10"
         runCommand("evaluate", text)
     }
+    @Test
+    fun testError1(){
+        val text = "-\"hello world!\""
+        runCommand("evaluate", text)
+    }
 }

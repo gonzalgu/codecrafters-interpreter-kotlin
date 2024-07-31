@@ -47,6 +47,9 @@ fun runCommand(command: String, fileContents: String) {
                 val expr = parser.parse()
                 val result = eval(expr)
                 System.out.println(printValue(result))
+            }catch (err:RuntimeError){
+                error(err.token, err.msg)
+                exitProcess(70)
             }catch (e:Exception){
                 exitProcess(65)
             }
